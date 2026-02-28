@@ -33,6 +33,14 @@
             color: #fff;
         }
 
+        /* 提高代码区域的可读性，改为黑色文字 */
+        pre, code {
+            background-color: #2d2d2d;
+            color: #ffffff; /* 代码区改为白色文字 */
+            border-radius: 5px;
+            padding: 10px;
+        }
+
         /* 按钮的美化 */
         .btn {
             background-color: #0077cc;
@@ -48,15 +56,7 @@
         }
     `);
 
-    // 2. 页面自动刷新功能
-    const refreshInterval = GM_getValue('refreshInterval', 60 * 1000); // 默认60秒刷新一次
-
-    // 自动刷新功能
-    setInterval(function() {
-        window.location.reload();
-    }, refreshInterval);
-
-    // 3. 插件设置菜单
+    // 2. 插件设置菜单
     const settingsMenu = document.createElement('div');
     settingsMenu.style.position = 'fixed';
     settingsMenu.style.top = '10px';
@@ -71,7 +71,7 @@
     settingsMenu.innerHTML = `
         <h3>Better Luogu Settings</h3>
         <label for="refreshInterval">页面刷新间隔（秒）：</label>
-        <input type="number" id="refreshInterval" value="${refreshInterval / 1000}" min="10" max="600" step="10">
+        <input type="number" id="refreshInterval" value="0" min="0" max="600" step="10"> <!-- 允许设置为0表示不刷新 -->
         <button id="saveSettings" class="btn">保存设置</button>
     `;
 
@@ -95,7 +95,7 @@
         settingsMenu.style.display = 'none';
     });
 
-    // 4. 添加按钮来控制设置面板的显示与隐藏
+    // 3. 添加按钮来控制设置面板的显示与隐藏
     const toggleButton = document.createElement('button');
     toggleButton.textContent = '设置';
     toggleButton.style.position = 'fixed';
