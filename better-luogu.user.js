@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name         Better Luogu! - 美化洛谷
+// @name         Better Luogu!
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description:zh  洛谷扩展
 // @description  Luogu Expansion
-// @author       ChatGPT 5.2 Mini
+// @author       ChatGPT
 // @match        https://www.luogu.com.cn/*
 // @grant        GM_addStyle
 // @grant        GM_setValue
@@ -19,7 +19,7 @@
         body {
             background-color: #f0f4f7 !important;
             font-family: "Arial", sans-serif !important;
-            color: #333 !important;
+            color: #333 !important; /* 黑色字体，确保可读性 */
         }
 
         /* 增加标题的样式 */
@@ -31,14 +31,6 @@
         #sidebar {
             background-color: #005d89;
             color: #fff;
-        }
-
-        /* 提高代码区域的可读性 */
-        pre, code {
-            background-color: #2d2d2d;
-            color: #e0e0e0;
-            border-radius: 5px;
-            padding: 10px;
         }
 
         /* 按钮的美化 */
@@ -53,20 +45,6 @@
 
         .btn:hover {
             background-color: #005d89;
-        }
-
-        /* 关闭按钮样式 */
-        .close-btn {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            font-size: 20px;
-            cursor: pointer;
-            color: #333;
-        }
-
-        .close-btn:hover {
-            color: #ff0000;
         }
     `);
 
