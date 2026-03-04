@@ -11,38 +11,33 @@
 // @grant        GM_getValue
 // ==/UserScript==
 
-
 (function() {
     'use strict';
 
-    // 页面美化 CSS
     GM_addStyle(`
+        /* 轻微背景优化（不强制文字颜色） */
         body {
-            background-color: #f0f4f7 !important;
-            font-family: "Arial", sans-serif !important;
-            color: #000 !important; /* 主文本黑色 */
+            background-color: #f7f9fb;
         }
 
-        h1, h2, h3 {
-            color: #005d89; /* 标题颜色 */
-        }
-
-        #sidebar {
-            background-color: #005d89;
-            color: #fff;
-        }
-
+        /* 仅优化按钮圆角，不改语义颜色 */
         .btn {
-            background-color: #0077cc;
-            border-radius: 5px;
-            padding: 10px 20px;
-            color: white;
-            border: none;
-            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.15s ease;
         }
 
         .btn:hover {
-            background-color: #005d89;
+            transform: translateY(-1px);
+        }
+
+        /* 代码块微优化 */
+        pre, code {
+            border-radius: 6px;
+        }
+
+        /* 侧边栏增加阴影（不改原色） */
+        #sidebar {
+            box-shadow: 2px 0 8px rgba(0,0,0,0.05);
         }
     `);
 })();
