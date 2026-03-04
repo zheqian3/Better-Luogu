@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Better Luogu!
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.0.1
 // @description:zh  洛谷扩展
 // @description  Luogu Expansion
 // @author       ChatGPT
